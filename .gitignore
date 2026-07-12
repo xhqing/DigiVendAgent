@@ -1,0 +1,20 @@
+# 运行时数据目录：Agent 的产物（产品成品、脚本、日志、复盘、node_modules 等）
+# 属本地业务数据，非开源内容；其中 docs/config.json 含明文账号密码/token，一并忽略
+docs/
+
+# 历史运行时目录名兜底：锚定仓库根的 vend/（曾用，现统一为 docs/）
+# ⚠️ 必须带前导 /，写成 /vend/；若写成 vend/ 会误伤 .claude/skills/vend/（核心 Skill 目录）
+/vend/
+
+# node_modules 全局兜底（docs/ 已含，其它运行时同样忽略）
+node_modules/
+
+# 系统杂物
+.DS_Store
+
+# Claude Code 个人本地配置（含 autoMemoryDirectory，机器本地，不提交）
+.claude/settings.local.json
+
+# hook 运行时状态文件（memory 变更标记 / diff checkpoint，机器本地）
+.claude/.memory-changed-this-session
+.claude/.last-memory-checkpoint
