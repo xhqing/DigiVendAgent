@@ -25,3 +25,15 @@ tmp/
 # find-skill 运行时产物（密钥 + 生成的索引/日志，勿提交）
 .claude/skills/find-skill/.env
 .claude/skills/find-skill/cache/
+
+# 产物接力目录（含可售卖成品，勿公开）
+artifacts/
+
+# Python 缓存
+__pycache__/
+*.pyc
+
+# 本机密钥通用兜底（保留 .env.example）
+.env
+.env.*
+!.env.example
