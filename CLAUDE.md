@@ -41,3 +41,20 @@
 ## anysearch skill 同步（全局为权威副本）
 
 全局 `~/.claude/skills/anysearch/` 是 anysearch skill 的权威副本，所有项目副本必须与它一致：任一项目副本核心内容改动 → 同步到全局，全局再同步到其它所有项目副本；全局副本改动 → 同步到所有项目副本。核心内容（`scripts/` 下所有 CLI、`shared/`、`SKILL.md`、`README.md`、`SECURITY.md`、`LICENSE`、`NOTICE`、`requirements.txt`、文件清单）必须一致。**例外**：`runtime.conf` 的 `Command` 路径各自保持（项目副本用项目根相对路径以开源可移植，全局用绝对路径）。同步后告知用户改了哪些副本、同步了什么。
+
+## 为什么开源项目要内置通用核心 skill
+
+本项目（DigiVendAgent / Vendy）是开源项目，且开源重点是 **Agent 本身**。像 anysearch、find-skill 这类通用 skill，日常使用中本以全局 `~/.claude/skills/` 为主——但只要它们**构成这个开源 Agent 的核心能力**，就必须同时放进项目 `.claude/skills/` 随仓库公开，目的是让 GitHub 上的其他人 clone 仓库后，能直接看到、理解这个 Agent 依赖哪些核心 skill，而不必各自去全局另行安装或猜测。
+
+判断标准不是「这个 skill 是否通用」，而是「它是否构成这个开源 Agent 的核心能力」。是核心 → 放项目目录并按下方规则双向同步；纯个人辅助、与 Agent 能力无关的 → 只留全局即可。
+
+## find-skill skill 同步（全局为权威副本）
+
+全局 `~/.claude/skills/find-skill/` 是 find-skill 的权威副本，本项目 `.claude/skills/find-skill/` 副本必须与它一致：
+
+- 全局副本核心内容改动 → 同步到本项目（及其它所有含 find-skill 的项目副本）。
+- 本项目副本改动 → 同步到全局，再由全局同步到其它项目。
+- 核心内容（`SKILL.md`、`scripts/install-skill.sh`、`update-skills-catalogue.sh`、`.env.example`，以及配套 slash command `.claude/commands/install-skill.md`）必须一致。
+- **不同步**：`.env`（本机 SkillsMP 密钥）、`cache/`（本机生成的 catalogue、日志）——机器本地运行时数据，已 gitignore。
+- 与 anysearch 不同，find-skill **无路径例外**：脚本与 SKILL.md 内的路径统一硬编码为全局 `~/.claude/skills/find-skill/`，项目副本与全局副本核心文件**逐字节相同**，无相对/绝对路径差异。
+- 同步后告知用户改了哪些副本、同步了什么。

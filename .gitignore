@@ -18,3 +18,10 @@ node_modules/
 # hook 运行时状态文件（memory 变更标记 / diff checkpoint，机器本地）
 .claude/.memory-changed-this-session
 .claude/.last-memory-checkpoint
+
+# 临时产物（见 .claude/rules/tmp-dir-for-artifacts.md）
+tmp/
+
+# find-skill 运行时产物（密钥 + 生成的索引/日志，勿提交）
+.claude/skills/find-skill/.env
+.claude/skills/find-skill/cache/
