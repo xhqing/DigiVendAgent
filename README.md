@@ -1,3 +1,15 @@
+<div align="center">
+
+<img src="assets/logo.svg" width="640" alt="Vendy logo" />
+
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
+![Stars](https://img.shields.io/github/stars/xhqing/DigiVendAgent?style=social)
+![Last Commit](https://img.shields.io/github/last-commit/xhqing/DigiVendAgent)
+![Built with Claude Code](https://img.shields.io/badge/Built%20with-Claude%20Code-19C37D)
+![AI Agent](https://img.shields.io/badge/Type-AI%20Agent-FF1493)
+
+</div>
+
 # DigiVendAgent
 
 > **Codename: Vendy** — your autonomous digital-goods vendor.
