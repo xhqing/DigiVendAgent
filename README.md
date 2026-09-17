@@ -5,18 +5,18 @@
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 ![Stars](https://img.shields.io/github/stars/xhqing/DigiVendAgent?style=social)
 ![Last Commit](https://img.shields.io/github/last-commit/xhqing/DigiVendAgent)
-![Built with Claude Code](https://img.shields.io/badge/Built%20with-Claude%20Code-19C37D)
 ![AI Agent](https://img.shields.io/badge/Type-AI%20Agent-FF1493)
+<img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/xhqing/xhqing/main/traffic/badges/DigiVendAgent.json" alt="Visits/day (14d)" />
 
 </div>
 
 # DigiVendAgent
 
-> **Codename: Vendy** — your autonomous digital-goods vendor.
+> **Codename: Vendy** — the sales & conversion agent of the team.
 >
-> "Digi (digital) + Vend (sell) + Agent" — purpose-built to produce digital / virtual / SaaS / MaaS / software services automatically, sell them across the global internet, and collect payouts until a configured money target is met.
+> "Digi (digital) + Vend (sell) + Agent" — Vendy is step ⑤ of a six-agent pipeline. She takes a finished digital product and turns it into money: list → price → fulfill → collect → withdraw, looping until the target is met. (Research = Scout, production = Wright, build = Mason, traffic = Buzz, analysis = Echo.)
 
-Vendy is an autonomous agent whose sole objective is **passive income**. She doesn't take hourly or daily freelance work, nor does she offer courses, managed services, or consulting that require ongoing human effort. She only builds "produce-once, sell-many" digital products, then autonomously lists, promotes, collects payment, and withdraws — looping until the target amount is reached.
+Vendy's objective is the **sales side of passive income**. She doesn't take hourly freelance work or offer courses / managed services / consulting. Given a "produce-once, sell-many" digital product, she autonomously lists, prices, fulfills, collects payment, handles after-sales, and withdraws.
 
 [中文文档 / Chinese](README_cn.md)
 
@@ -26,7 +26,7 @@ Vendy is an autonomous agent whose sole objective is **passive income**. She doe
 
 | Dimension | Detail |
 |-----------|--------|
-| **What** | Autonomously produce and sell digital goods online for profit |
+| **What** | Autonomously sell digital goods online for profit (team step ⑤ — sales / conversion) |
 | **What not** | No time-billed freelance; no human-intensive active services |
 | **Market** | Global (English-first) + China (Xiaohongshu) |
 | **Payout** | Withdraw to HK / CN bank (Payloadz + PayPal main route) |
@@ -34,34 +34,33 @@ Vendy is an autonomous agent whose sole objective is **passive income**. She doe
 
 ---
 
-## 🧠 Core Capabilities (Two Skills)
+## 🧠 Core Capabilities
 
-### 1. Trend Radar · `/hot-trend` (upstream selection)
+> 🔎 **Trend research (`/hot-trend`) now lives in Scout** — [ProductStrategistAgent](https://github.com/xhqing/ProductStrategistAgent). Vendy is the **conversion / sales** agent: give her a product and she turns it into money.
 
-Vendy's "eyes". Scans global English-language trend boards in parallel (Google Trends, Exploding Topics, X, Reddit, TikTok, Product Hunt, Hacker News, Gumroad, etc.), filters with a five-dimension scorecard, and converges on the **single** trend best suited to become a shippable digital product. Outputs a complete executable plan, then stops and waits for your confirmation.
+### Vending Engine · `/vend` (the sales loop)
 
-- Trigger: `/hot-trend`
-- Iron rule: output exactly one trend, never a list; decisions must be data-backed and actionable; time window ≥ 2 weeks.
-- Output: `docs/product/hot-trend-<slug>.md` (runtime data, not shipped with this repo)
-
-### 2. Vending Engine · `/vend` (production + sales)
-
-Vendy's "hands". Reads the target from `docs/config.json` and enters a continuous loop: produce → list → promote → collect → check metrics → adjust. **She only stops for three special cases**; otherwise she runs autonomously until the target is met.
+Vendy's "hands". Reads the target from `docs/config.json` and runs the **sales loop**: list → price → fulfill → collect → check metrics → adjust. Producing the product is **Wright**'s job ([ProductProducerAgent](https://github.com/xhqing/ProductProducerAgent)); driving traffic is **Buzz**'s ([GrowthMarketerAgent](https://github.com/xhqing/GrowthMarketerAgent)). **She only stops for three special cases**; otherwise she runs autonomously until the target is met.
 
 - Trigger: `/vend`
 - Listing & payment: Payloadz → PayPal (overseas); Xiaohongshu (China)
-- Promotion: X, Instagram, YouTube, Xiaohongshu
+- Fulfillment & after-sales: delivery, refunds, disputes
 - Three cases that require stopping to ask: account registration / permissions, password / verification input, spending money
 
 ---
 
 ## 🔁 Typical Workflow
 
+Vendy is step **⑤** of a six-agent team:
+
 ```
-/hot-trend   →   lock onto one trend + actionable plan (stops, awaits confirmation)
-     │
-     ▼
-  /vend       →   produce → list → promote → collect → loop until target met
+① Scout (research) → ② Wright (produce) → ③ Mason (build site) → ④ Buzz (traffic) → ⑤ Vendy (sell / ops) → ⑥ Echo (analyze)
+```
+
+Run the sales loop:
+
+```
+/vend   →   list → price → promote → collect → withdraw (loop until target met)
 ```
 
 ---
@@ -78,8 +77,7 @@ DigiVendAgent/
 ├── CLAUDE.md                 ← project-level agent instructions
 └── .claude/
     ├── skills/
-    │   ├── hot-trend/        ← Trend Radar skill
-    │   ├── vend/             ← Vending Engine skill
+    │   ├── vend/             ← Vending Engine skill (sales loop)
     │   └── anysearch/        ← bundled web-search skill (third-party, its own license)
     └── rules/                ← project work rules
 ```
@@ -124,11 +122,8 @@ Runtime data is centralized under `docs/`. Core config: `docs/config.json`.
 ## 🚀 Quick Start
 
 1. Create `docs/config.json` locally with your target, budget, and platform accounts (never committed).
-2. Have Vendy pick a sellable trend:
-   ```
-   /hot-trend
-   ```
-3. Once you confirm the plan, start the produce-and-sell loop:
+2. (Optional) Get a validated product opportunity from **Scout** — [ProductStrategistAgent](https://github.com/xhqing/ProductStrategistAgent) — or supply your own product.
+3. Start the sales loop:
    ```
    /vend
    ```

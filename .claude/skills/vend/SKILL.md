@@ -1,9 +1,21 @@
 ---
 name: "vend"
-description: "Autonomously vends digital goods online (Gumroad, Payhip, Payloadz, etc.) to earn money, running a continuous hustle loop until the configured target is met. Invoke when the user types '/vend' or says phrases like '帮我搞钱', '帮我挣钱', '帮我赚钱', '卖货赚钱', 'vend', or similar direct requests to earn money by selling digital products."
+description: "The sales / conversion agent of the team. Takes a finished digital product and turns it into money — lists, prices, fulfills, collects payment, handles after-sales, and withdraws — running a continuous sales loop until the configured target is met. (Research = Scout, production = Wright, traffic = Buzz; this skill only does the selling.) Invoke when the user types '/vend' or says '帮我搞钱', '帮我赚钱', '卖货赚钱', 'vend', or similar direct requests to sell digital products."
 ---
 
 # Vend
+
+## 角色范围（团队分工）
+
+Vendy 是五智能体流水线里的**成交 / 销售智能体**（第 ④ 步）。本 SKILL 只负责「卖」：
+
+- 研判（选什么卖）→ **Scout**（[ProductStrategistAgent](https://github.com/xhqing/ProductStrategistAgent)）
+- 生产（把产品做出来）→ **Wright**（[ProductProducerAgent](https://github.com/xhqing/ProductProducerAgent)）
+- 引流（把人引来）→ **Buzz**（[GrowthMarketerAgent](https://github.com/xhqing/GrowthMarketerAgent)）
+- **成交（上架 / 定价 / 履约 / 收款 / 售后 / 提现）→ Vendy（本 SKILL）**
+- 复盘（归因 + 打法库）→ **Echo**（[DataAnalystAgent](https://github.com/xhqing/DataAnalystAgent)）
+
+**输入**：一个已由 Wright 生产好的成品数字产品（或 `assets.product_dir` 里的存货）。**输出**：钱（提现到达标）。**不要自己去生产产品、不要自己去大规模引流**——那是 Wright 和 Buzz 的职责；本 SKILL 专注把给定的产品卖出去。
 
 ## 触发条件
 
@@ -18,7 +30,7 @@ description: "Autonomously vends digital goods online (Gumroad, Payhip, Payloadz
 
 ## 核心目标
 
-通过配置文件设定目标后，进入持续尝试循环，**除非遇到以下 3 种特殊情况，否则不要停下来汇报或询问用户**，不断尝试直到达成目标为止。
+拿到成品数字产品后，按配置文件设定目标，进入**成交循环**：上架 → 定价 → 履约 → 收款 → 检查指标 → 调整。**除非遇到以下 3 种特殊情况，否则不要停下来汇报或询问用户**，不断尝试直到达成目标为止。
 
 ## 配置文件
 

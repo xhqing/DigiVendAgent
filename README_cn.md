@@ -1,12 +1,14 @@
 # DigiVendAgent
 
-> **拟人化名字：Vendy** —— 你身边的数字商品自动售卖员。
+> **拟人化名字：Vendy** —— 团队里的成交 / 电商运营智能体。
 >
-> 「Digi（数字）+ Vend（售卖）+ Agent（智能体）」三词合一，专注一件事：把数字商品 / 虚拟商品 / SaaS / MaaS / 软件服务 / 产品服务自动生产出来，卖出去，换成钱。
+> 「Digi（数字）+ Vend（售卖）+ Agent（智能体）」—— Vendy 是六智能体流水线的第 ⑤ 步：拿到成品数字产品，把它变成钱（上架 → 定价 → 履约 → 收款 → 提现），循环到达成目标。（研判 = Scout，生产 = Wright，建站 = Mason，引流 = Buzz，复盘 = Echo。）
 
-Vendy 是一个以**被动收入**为唯一目标的自主智能体。她不接时薪、日薪类外包，也不做课程、代运营、咨询等需要持续投入人力的主动服务——她只做「一次产出、反复销售」的数字产品，然后在全球互联网上自动上架、引流、收款、提现，直到达成你设定的金额目标为止。
+Vendy 的目标是**被动收入里的「成交」环节**。她不接时薪、日薪类外包，也不做课程、代运营、咨询等需要持续投入人力的主动服务——拿到「一次产出、反复销售」的数字产品后，她自动上架、定价、履约、收款、处理售后、提现。
 
 [English](README.md)
+
+<img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/xhqing/xhqing/main/traffic/badges/DigiVendAgent.json" alt="Visits/day (14d)" />
 
 ---
 
@@ -14,7 +16,7 @@ Vendy 是一个以**被动收入**为唯一目标的自主智能体。她不接�
 
 | 维度 | 说明 |
 |------|------|
-| **做什么** | 自主生产并在线售卖数字商品赚钱 |
+| **做什么** | 自主在线售卖数字商品赚钱（团队第 ⑤ 步：成交 / 转化）|
 | **不做什么** | 不按时间计费的外包；不做需要持续人力的主动服务 |
 | **目标市场** | 全球（英文为主）+ 国内（小红书）|
 | **收款** | 提现到 HK / CN 银行（Payloadz + PayPal 主链路）|
@@ -22,34 +24,33 @@ Vendy 是一个以**被动收入**为唯一目标的自主智能体。她不接�
 
 ---
 
-## 🧠 核心能力（两个 Skill）
+## 🧠 核心能力
 
-### 1. 热点选品雷达 · `/hot-trend`（上游选品）
+> 🔎 **热点选品（`/hot-trend`）已迁至 Scout** —— [ProductStrategistAgent](https://github.com/xhqing/ProductStrategistAgent)。Vendy 是团队里的**成交 / 销售智能体**：给她一个产品，她把它变成钱。
 
-Vendy 的「眼睛」。并行扫描全球英文互联网热点榜（Google Trends、Exploding Topics、X、Reddit、TikTok、Product Hunt、Hacker News、Gumroad 等），用**五维评分卡**筛选，最终收敛到**唯一一个**最适合做成数字产品、能借势、能卖出去、能落地的热点，输出一份完整可执行方案，然后停下等你确认。
+### 自动售卖引擎 · `/vend`（成交循环）
 
-- 触发：`/hot-trend`、`热点选品`、`蹭热点做产品`、`现在什么火`……
-- 铁律：只输出一个热点，绝不罗列；决策必须有数据支撑；必须可落地；时效窗口 ≥ 2 周。
-- 产物：`docs/product/hot-trend-<slug>.md`（运行时数据，不随本仓库发布）
-
-### 2. 自动售卖引擎 · `/vend`（生产 + 销售）
-
-Vendy 的「手脚」。读取 `docs/config.json` 的目标后，进入持续尝试循环：生产成品 → 上架 → 引流 → 收款 → 检查指标 → 调整策略，**除非遇到 3 种特殊情况，否则不停下来汇报或询问**，一直跑到达成目标。
+Vendy 的「手脚」。读取 `docs/config.json` 的目标后，跑**成交循环**：上架 → 定价 → 履约 → 收款 → 检查指标 → 调整策略。生产成品是 **Wright**（[ProductProducerAgent](https://github.com/xhqing/ProductProducerAgent)）的活，引流是 **Buzz**（[GrowthMarketerAgent](https://github.com/xhqing/GrowthMarketerAgent)）的活。**除非遇到 3 种特殊情况，否则不停下来汇报或询问**，一直跑到达成目标。
 
 - 触发：`/vend`、`帮我搞钱`、`帮我赚钱`、`卖货赚钱`……
 - 上架收款：Payloadz → PayPal（海外）；小红书（国内）
-- 引流：X、Instagram、YouTube、小红书
+- 履约与售后：发货、退款、纠纷
 - 3 种必须停下来问用户的特殊情况：需要注册账号 / 获取权限、需要输入密码 / 验证、需要花钱投入
 
 ---
 
 ## 🔁 典型工作流
 
+Vendy 是六智能体团队的第 **⑤** 步：
+
 ```
-/hot-trend   →   锁定唯一热点 + 可落地方案（停，等你确认）
-     │
-     ▼
-  /vend       →   生产成品 → 上架 → 引流 → 收款 → 循环到达成目标
+① Scout（研判）→ ② Wright（生产）→ ③ Mason（建阵地）→ ④ Buzz（引流）→ ⑤ Vendy（成交运营）→ ⑥ Echo（复盘）
+```
+
+跑成交循环：
+
+```
+/vend   →   上架 → 定价 → 履约 → 收款 → 提现（循环到达成目标）
 ```
 
 ---
@@ -66,8 +67,7 @@ DigiVendAgent/
 ├── CLAUDE.md                 ← 项目级 Agent 指令
 └── .claude/
     ├── skills/
-    │   ├── hot-trend/        ← 热点选品雷达 Skill
-    │   ├── vend/             ← 自动售卖引擎 Skill
+    │   ├── vend/             ← 自动售卖引擎 Skill（成交循环）
     │   └── anysearch/        ← 内置网络搜索 Skill（第三方，保留其自身协议）
     └── rules/                ← 项目工作规则
 ```
@@ -112,11 +112,8 @@ DigiVendAgent/
 ## 🚀 快速开始
 
 1. 本地创建 `docs/config.json`，填好目标金额、预算、平台账号（不提交）。
-2. 想让 Vendy 先帮你挑一个能卖的热点：
-   ```
-   /hot-trend
-   ```
-3. 确认方案后，让 Vendy 开始生产 + 售卖循环：
+2.（可选）从 **Scout** —— [ProductStrategistAgent](https://github.com/xhqing/ProductStrategistAgent) —— 拿到一个经过验证的产品机会，或自行准备好产品。
+3. 让 Vendy 开始成交循环：
    ```
    /vend
    ```
