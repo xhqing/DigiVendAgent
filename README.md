@@ -2,9 +2,8 @@
 
 <img src="assets/logo.svg" width="640" alt="Vendy logo" />
 
-![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
-![Stars](https://img.shields.io/github/stars/xhqing/DigiVendAgent?style=social)
-![Last Commit](https://img.shields.io/github/last-commit/xhqing/DigiVendAgent)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow)
+![Version](https://img.shields.io/badge/Version-1.0.0-blue)
 ![AI Agent](https://img.shields.io/badge/Type-AI%20Agent-FF1493)
 <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/xhqing/xhqing/main/traffic/badges/DigiVendAgent.json" alt="Visits/day (14d)" />
 
@@ -18,7 +17,7 @@
 
 Vendy's objective is the **sales side of passive income**. She doesn't take hourly freelance work or offer courses / managed services / consulting. Given a "produce-once, sell-many" digital product, she autonomously lists, prices, fulfills, collects payment, handles after-sales, and withdraws.
 
-[中文文档 / Chinese](README_cn.md)
+[简体中文](README_cn.md)
 
 ---
 
@@ -74,12 +73,10 @@ DigiVendAgent/
 ├── README.md                 ← this file (English)
 ├── README_cn.md              ← Chinese README
 ├── LICENSE.md                ← MIT
-├── CLAUDE.md                 ← project-level agent instructions
-└── .claude/
-    ├── skills/
-    │   ├── vend/             ← Vending Engine skill (sales loop)
-    │   └── anysearch/        ← bundled web-search skill (third-party, its own license)
-    └── rules/                ← project work rules
+├── CLAUDE.md / CODEBUDDY.md  ← project-level agent instructions (CODEBUDDY.md → CLAUDE.md)
+├── CHANGELOG.md              ← version history
+├── assets/                   ← logo and visual assets
+└── .codebuddy/skills/        ← agent skills (vend, etc.)
 ```
 
 > Runtime data (products, scripts, logs, `config.json` with credentials) lives in `docs/`, which is **gitignored and not distributed**. Each user keeps their own locally.
@@ -151,11 +148,11 @@ Runtime data is centralized under `docs/`. Core config: `docs/config.json`.
 
 ---
 
-## 📄 License
+## 📄 License & Attribution
 
-MIT — see [LICENSE.md](LICENSE.md). The bundled `anysearch` skill under `.claude/skills/anysearch/` is third-party and retains its own license and notice.
+MIT — see [LICENSE.md](LICENSE.md).
 
-## 🏷️ Attribution
+Copyright (c) 2026 All Contributors.
 
 If you use, fork, or build on this project, please credit **DigiVendAgent (Vendy)** and link back to the project repository: `https://github.com/xhqing/DigiVendAgent`.
 

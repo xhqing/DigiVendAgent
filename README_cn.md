@@ -1,3 +1,14 @@
+<div align="center">
+
+<img src="assets/logo.svg" width="640" alt="Vendy logo" />
+
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow)
+![Version](https://img.shields.io/badge/Version-1.0.0-blue)
+![AI Agent](https://img.shields.io/badge/Type-AI%20Agent-FF1493)
+<img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/xhqing/xhqing/main/traffic/badges/DigiVendAgent.json" alt="Visits/day (14d)" />
+
+</div>
+
 # DigiVendAgent
 
 > **拟人化名字：Vendy** —— 团队里的成交 / 电商运营智能体。
@@ -64,12 +75,10 @@ DigiVendAgent/
 ├── README.md                 ← 英文 README
 ├── README_cn.md              ← 本文件（中文）
 ├── LICENSE.md                ← MIT
-├── CLAUDE.md                 ← 项目级 Agent 指令
-└── .claude/
-    ├── skills/
-    │   ├── vend/             ← 自动售卖引擎 Skill（成交循环）
-    │   └── anysearch/        ← 内置网络搜索 Skill（第三方，保留其自身协议）
-    └── rules/                ← 项目工作规则
+├── CLAUDE.md / CODEBUDDY.md  ← 项目级 Agent 指令（CODEBUDDY.md → CLAUDE.md）
+├── CHANGELOG.md              ← 版本记录
+├── assets/                   ← LOGO 与视觉资源
+└── .codebuddy/skills/        ← Agent 技能（vend 等）
 ```
 
 > 运行时数据（产品、脚本、日志、含凭证的 `config.json`）位于 `docs/` 目录，**已 gitignore，不随仓库分发**，每个用户本地自备。
@@ -143,7 +152,9 @@ DigiVendAgent/
 
 ## 📄 协议
 
-MIT，详见 [LICENSE.md](LICENSE.md)。内置的 `.claude/skills/anysearch/` 为第三方 Skill，保留其自身协议与声明。
+MIT，详见 [LICENSE.md](LICENSE.md)。
+
+Copyright (c) 2026 All Contributors.
 
 ## 🏷️ 署名
 
