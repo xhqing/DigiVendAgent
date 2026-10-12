@@ -1,6 +1,6 @@
 # Changelog
 
-## [Unreleased]
+## [1.0.0] - 2026-10-12
 
 ### 新增（接收 Mason→Vendy 阵地运营交接：成交阵地移交）
 
