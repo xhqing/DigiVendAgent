@@ -1,5 +1,12 @@
 # Changelog
 
+## [Unreleased]
+
+### 新增（AGENTS.md 软链接入口——智能体专属文件新规统一落位）
+
+- **为什么改**：用户 2026-10-17 修订智能体专属文件归属规则（细则见全局 `~/.claude/docs/agents-registry.md` 2026-10-17 修订节）：实体副本只属于 Agent 项目，子项目改挂 `AGENTS.md` / `.pi` 软链接指回负责 Agent；全队 agent 项目统一补齐 `AGENTS.md` 入口（本仓此前只有 `CLAUDE.md`）。
+- **改了什么**（2026-10-17）：新建软链接 `AGENTS.md → CLAUDE.md`（相对路径、随仓库提交；内容唯一源仍是 `CLAUDE.md`，`AGENTS.md` 仅作别名入口）。本仓无子项目，不涉及子项目侧链接；`.claude/` 按新规不纳入链接网络、保持原状。
+
 ## [1.0.0] - 2026-10-12
 
 ### 新增（接收 Mason→Vendy 阵地运营交接：成交阵地移交）
