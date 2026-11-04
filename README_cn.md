@@ -5,7 +5,6 @@
 ![License: MIT](https://img.shields.io/badge/License-MIT-yellow)
 ![Version](https://img.shields.io/badge/Version-1.0.0-blue)
 ![AI Agent](https://img.shields.io/badge/Type-AI%20Agent-FF1493)
-<img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/xhqing/xhqing/main/traffic/badges/DigiVendAgent.json" alt="Visits/day (14d)" />
 
 </div>
 
@@ -19,7 +18,6 @@ Vendy 的目标是**被动收入里的「成交」环节**。她不接时薪、�
 
 [English](README.md)
 
-<img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/xhqing/xhqing/main/traffic/badges/DigiVendAgent.json" alt="Visits/day (14d)" />
 
 ---
 
