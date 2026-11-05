@@ -73,7 +73,7 @@ DigiVendAgent/
 ├── README.md                 ← 英文 README
 ├── README_cn.md              ← 本文件（中文）
 ├── LICENSE.md                ← MIT
-├── CLAUDE.md / CODEBUDDY.md  ← 项目级 Agent 指令（CODEBUDDY.md → CLAUDE.md）
+├── AGENTS.md / CODEBUDDY.md  ← 项目级 Agent 指令（CODEBUDDY.md → AGENTS.md）
 ├── CHANGELOG.md              ← 版本记录
 ├── assets/                   ← LOGO 与视觉资源
 └── .codebuddy/skills/        ← Agent 技能（vend 等）

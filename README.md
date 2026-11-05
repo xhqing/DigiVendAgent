@@ -72,7 +72,7 @@ DigiVendAgent/
 ├── README.md                 ← this file (English)
 ├── README_cn.md              ← Chinese README
 ├── LICENSE.md                ← MIT
-├── CLAUDE.md / CODEBUDDY.md  ← project-level agent instructions (CODEBUDDY.md → CLAUDE.md)
+├── AGENTS.md / CODEBUDDY.md  ← project-level agent instructions (CODEBUDDY.md → AGENTS.md)
 ├── CHANGELOG.md              ← version history
 ├── assets/                   ← logo and visual assets
 └── .codebuddy/skills/        ← agent skills (vend, etc.)
