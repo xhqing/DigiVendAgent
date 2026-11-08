@@ -151,7 +151,7 @@ Runtime data is centralized under `docs/`. Core config: `docs/config.json`.
 
 MIT — see [LICENSE.md](LICENSE.md).
 
-Copyright (c) 2026 All Contributors.
+Copyright (c) 2026 xhqing <https://github.com/xhqing>.
 
 If you use, fork, or build on this project, please credit **DigiVendAgent (Vendy)** and link back to the project repository: `https://github.com/xhqing/DigiVendAgent`.
 
