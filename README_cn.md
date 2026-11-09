@@ -152,7 +152,7 @@ DigiVendAgent/
 
 MIT，详见 [LICENSE.md](LICENSE.md)。
 
-Copyright (c) 2026 xhqing <https://github.com/xhqing>.
+Copyright (c) 2026 xhqing and contributors.
 
 ## 🏷️ 署名
 
